@@ -38,4 +38,5 @@ interface IPost {
   _createdAt: string;
   description: string;
   minRead: number;
+  body: IBlock[];
 }

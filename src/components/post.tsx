@@ -1,7 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
+import dayjs from "dayjs";
 
 import urlFor from "../../sanity.client";
-import dayjs from "dayjs";
 
 type props = {
   post: IPost;
@@ -9,7 +10,9 @@ type props = {
 
 export default function Post({ post }: props) {
   return (
-    <div className="transition duration-300 hover:scale-105">
+    <Link
+      href={post.slug.current}
+      className="transition duration-300 hover:scale-105">
       <div className="relative w-full h-40 md:h-48 lg:h-56">
         <Image
           src={urlFor(post.mainImage).url()}
@@ -45,6 +48,6 @@ export default function Post({ post }: props) {
           <p className="text-xs base-text">{post.minRead} min read</p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

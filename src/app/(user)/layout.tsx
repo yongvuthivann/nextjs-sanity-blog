@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/providers/theme-provider";
 
 import "../globals.css";
 import MainLayout from "@/layout/main-layout";
+import { ModeToggle } from "@/components/mode-toggle";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +27,16 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange>
-          <MainLayout>{children}</MainLayout>
+          <MainLayout>
+            <div className="flex items-center justify-between">
+              <Link href="/" className="font-semibold text-lg">
+                Nextjs x Sanity
+              </Link>
+              <ModeToggle />
+            </div>
+            <hr className="my-5" />
+            {children}
+          </MainLayout>
         </ThemeProvider>
       </body>
     </html>
