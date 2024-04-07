@@ -5,6 +5,7 @@ export const postQuery = `
     slug,
     mainImage,
     description,
+    minRead,
     author -> {
         name,
         slug,
