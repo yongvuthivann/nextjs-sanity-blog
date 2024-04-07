@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Inter } from "next/font/google";
+import { FaGithub } from "react-icons/fa";
 
 import { ThemeProvider } from "@/providers/theme-provider";
 import MainLayout from "@/layout/main-layout";
@@ -35,7 +36,15 @@ export default function RootLayout({
               <Link href="/" className="font-semibold text-lg">
                 Nextjs x Sanity
               </Link>
-              <ModeToggle />
+
+              <div className="flex items-center space-x-6">
+                <a
+                  href="https://github.com/yongvuthivann/nextjs-sanity-blog"
+                  target="__blank">
+                  <FaGithub className="w-6 h-6" />
+                </a>
+                <ModeToggle />
+              </div>
             </div>
             <hr className="my-5" />
             {children}
