@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Inter } from "next/font/google";
-import { ThemeProvider } from "@/providers/theme-provider";
 
-import "../globals.css";
+import { ThemeProvider } from "@/providers/theme-provider";
 import MainLayout from "@/layout/main-layout";
 import { ModeToggle } from "@/components/mode-toggle";
+import Footer from "@/components/footer";
+
+import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,6 +38,7 @@ export default function RootLayout({
             </div>
             <hr className="my-5" />
             {children}
+            <Footer />
           </MainLayout>
         </ThemeProvider>
       </body>
