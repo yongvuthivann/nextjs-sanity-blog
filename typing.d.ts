@@ -37,4 +37,5 @@ interface IPost {
   title: string;
   _createdAt: string;
   description: string;
+  minRead: number;
 }

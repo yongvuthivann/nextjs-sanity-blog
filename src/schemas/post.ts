@@ -10,6 +10,7 @@ export default defineType({
       title: "Title",
       type: "string",
     }),
+
     defineField({
       name: "slug",
       title: "Slug",
@@ -19,6 +20,13 @@ export default defineType({
         maxLength: 96,
       },
     }),
+
+    defineField({
+      name: "minRead",
+      title: "Minute Read",
+      type: "number",
+    }),
+
     defineField({
       name: "author",
       title: "Author",
