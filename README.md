@@ -17,5 +17,5 @@ Open [http://localhost:3000/studio](http://localhost:3000/studio) with your brow
 
 ## Resources
 
-Next Sanity: [https://www.npmjs.com/package/next-sanity]https://www.npmjs.com/package/next-sanity
-Sanity: [https://www.sanity.io]https://www.sanity.io
+- Next Sanity: [https://www.npmjs.com/package/next-sanity]https://www.npmjs.com/package/next-sanity
+- Sanity: [https://www.sanity.io]https://www.sanity.io
