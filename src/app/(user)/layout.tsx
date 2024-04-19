@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Inter } from "next/font/google";
 import { FaGithub } from "react-icons/fa";
+import { ViewTransitions } from "next-view-transitions";
 
 import { ThemeProvider } from "@/providers/theme-provider";
 import MainLayout from "@/layout/main-layout";
@@ -24,34 +25,36 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange>
-          <MainLayout>
-            <div className="flex items-center justify-between">
-              <Link href="/" className="font-semibold text-lg">
-                Nextjs x Sanity
-              </Link>
+    <ViewTransitions>
+      <html lang="en">
+        <body className={inter.className}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange>
+            <MainLayout>
+              <div className="flex items-center justify-between">
+                <Link href="/" className="font-semibold text-lg">
+                  Nextjs x Sanity
+                </Link>
 
-              <div className="flex items-center space-x-6">
-                <a
-                  href="https://github.com/yongvuthivann/nextjs-sanity-blog"
-                  target="__blank">
-                  <FaGithub className="w-6 h-6" />
-                </a>
-                <ModeToggle />
+                <div className="flex items-center space-x-6">
+                  <a
+                    href="https://github.com/yongvuthivann/nextjs-sanity-blog"
+                    target="__blank">
+                    <FaGithub className="w-6 h-6" />
+                  </a>
+                  <ModeToggle />
+                </div>
               </div>
-            </div>
-            <hr className="my-5" />
-            {children}
-            <Footer />
-          </MainLayout>
-        </ThemeProvider>
-      </body>
-    </html>
+              <hr className="my-5" />
+              {children}
+              <Footer />
+            </MainLayout>
+          </ThemeProvider>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }
